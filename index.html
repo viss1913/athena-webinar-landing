@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Athena — Практический интенсив по вайбкодингу</title>
+  <meta name="description" content="Освой искусственный интеллект. Научись создавать сайты, приложения и собственные цифровые продукты." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="assets/brand/athena-owl.svg" type="image/svg+xml" />
+</head>
+<body>
+  <a class="skip-link" href="#top">К содержанию</a>
+
+  <header class="site-header" data-header>
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Athena — на главную">
+        <img src="assets/brand/athena-owl.svg" alt="" width="36" height="36" />
+        <span class="brand-name">Athena</span>
+      </a>
+
+      <nav class="nav-desktop" aria-label="Основная навигация">
+        <a href="#about">О курсе</a>
+        <a href="#program">Программа</a>
+        <a href="#teacher">Преподаватель</a>
+        <a href="#reviews">Отзывы</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <a class="btn btn-dark btn-sm header-cta" href="#signup">Записаться на интенсив →</a>
+
+      <button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false" data-burger>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="nav-drawer" data-drawer hidden>
+      <nav aria-label="Мобильная навигация">
+        <a href="#about">О курсе</a>
+        <a href="#program">Программа</a>
+        <a href="#teacher">Преподаватель</a>
+        <a href="#reviews">Отзывы</a>
+        <a href="#faq">FAQ</a>
+        <a class="btn btn-dark" href="#signup">Записаться на интенсив →</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- 1. Hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-bg" aria-hidden="true">
+        <img class="hero-glass-full" src="assets/mockups/hero-glass-clean.png" alt="" />
+      </div>
+      <div class="container hero-inner reveal is-visible">
+        <p class="pill pill-spark">✨ Практический интенсив</p>
+        <h1 id="hero-title"><span class="hero-thin">Твоё время</span> <span class="hero-strong">создавать.</span></h1>
+        <p class="hero-lead">
+          Освой искусственный интеллект. Научись создавать сайты, приложения
+          и собственные цифровые продукты.
+        </p>
+
+        <div class="hero-strip" role="list">
+          <div class="hero-strip-item" role="listitem">
+            <span class="hero-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            </span>
+            <span>Сайты</span>
+          </div>
+          <div class="hero-strip-item" role="listitem">
+            <span class="hero-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12a8 8 0 0 1-8 8H7l-4 3V12a8 8 0 1 1 18 0Z"/></svg>
+            </span>
+            <span>ИИ-чат-боты</span>
+          </div>
+          <div class="hero-strip-item" role="listitem">
+            <span class="hero-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19V9M10 19V5M16 19v-7M22 19V8"/></svg>
+            </span>
+            <span>SMM и продвижение</span>
+          </div>
+          <div class="hero-strip-item" role="listitem">
+            <span class="hero-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></svg>
+            </span>
+            <span>Backend и базы данных</span>
+          </div>
+        </div>
+
+        <p class="hero-tagline">От идеи до цифровых продуктов. Создавай, автоматизируй, развивай.</p>
+        <a class="btn btn-dark btn-lg" href="#signup">Начать создавать →</a>
+        <p class="hero-note">Для начинающих · Без опыта программирования</p>
+      </div>
+    </section>
+
+    <!-- 2. Capabilities -->
+    <section class="section section-muted" id="about" aria-labelledby="about-title">
+      <div class="container reveal">
+        <h2 id="about-title" class="section-title">Раньше для этого нужна была команда.<br />Теперь можешь ты.</h2>
+        <p class="section-lead">
+          Ещё недавно для создания сайта, приложения или собственного онлайн-сервиса
+          требовались программисты, дизайнеры и технические специалисты.
+          Сегодня искусственный интеллект позволяет одному человеку выполнять работу целой команды.
+        </p>
+
+        <div class="cards-4">
+          <article class="feature-card">
+            <div class="feature-visual">
+              <img src="assets/mockups/card-sites.png" alt="Пример сайта-портфолио" width="360" height="270" loading="lazy" />
+            </div>
+            <h3>Сайты</h3>
+            <p>Создавай сайты для себя, своего бизнеса, проектов и клиентов.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-visual">
+              <img src="assets/mockups/card-chatbots.png" alt="Интерфейс ИИ-чат-бота" width="360" height="270" loading="lazy" />
+            </div>
+            <h3>ИИ-чат-боты</h3>
+            <p>Создавай интеллектуальных помощников, которые консультируют, отвечают на вопросы и выполняют задачи.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-visual">
+              <img src="assets/mockups/card-smm.png" alt="Контент-план для SMM" width="360" height="270" loading="lazy" />
+            </div>
+            <h3>SMM и продвижение</h3>
+            <p>Создавай контент, визуалы и публикации. Автоматизируй работу с социальными сетями.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-visual">
+              <img src="assets/mockups/card-backend.png" alt="Панель базы данных" width="360" height="270" loading="lazy" />
+            </div>
+            <h3>Backend и базы данных</h3>
+            <p>Разрабатывай внутреннюю логику приложений, подключай базы данных и создавай полноценные цифровые сервисы.</p>
+          </article>
+        </div>
+
+        <p class="section-footer-line">Ты можешь не просто пользоваться технологиями. Ты можешь создавать их самостоятельно.</p>
+      </div>
+    </section>
+
+    <!-- 3. Tools -->
+    <section class="section" id="tools" aria-labelledby="tools-title">
+      <div class="container reveal">
+        <h2 id="tools-title" class="section-title">Не просто общаться с ИИ.<br />Создавать с его помощью.</h2>
+        <p class="section-lead">
+          Осваивай передовые инструменты AI-разработки. Создавай настоящие сайты,
+          приложения и цифровые продукты с помощью интеллектуальных сред разработки.
+        </p>
+
+        <div class="tools-row">
+          <figure class="tool-shot">
+            <img src="assets/mockups/tool-cursor.png" alt="Cursor — разработка с ИИ" width="560" height="500" loading="lazy" />
+          </figure>
+          <figure class="tool-shot">
+            <img src="assets/mockups/tool-codex.png" alt="OpenAI Codex — интеллектуальные агенты" width="560" height="500" loading="lazy" />
+          </figure>
+          <figure class="tool-shot">
+            <img src="assets/mockups/tool-vscode.png" alt="Visual Studio Code — управление проектом" width="560" height="500" loading="lazy" />
+          </figure>
+        </div>
+
+        <div class="icon-row">
+          <div class="icon-item">
+            <span class="icon-circle" aria-hidden="true">&lt;/&gt;</span>
+            <p>Работа с настоящим кодом</p>
+          </div>
+          <div class="icon-item">
+            <span class="icon-circle" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 10h16M10 4v16"/></svg>
+            </span>
+            <p>Создание frontend и backend</p>
+          </div>
+          <div class="icon-item">
+            <span class="icon-circle" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6"><ellipse cx="12" cy="7" rx="6" ry="2.5"/><path d="M6 7v5c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5V7"/></svg>
+            </span>
+            <p>Работа с базами данных</p>
+          </div>
+          <div class="icon-item">
+            <span class="icon-circle" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
+            </span>
+            <p>Полный контроль над проектом</p>
+          </div>
+        </div>
+
+        <p class="section-footer-line">Мы учим не просто пользоваться нейросетями. Мы учим создавать с их помощью полноценные цифровые продукты.</p>
+      </div>
+    </section>
+
+    <!-- 4. Chat → IDE -->
+    <section class="section section-muted" id="shift" aria-labelledby="shift-title">
+      <div class="container reveal">
+        <p class="pill pill-lilac">Новый этап работы с ИИ</p>
+        <h2 id="shift-title" class="section-title">Это следующий этап.<br />И он проще, чем кажется.</h2>
+        <p class="section-lead">
+          Мы привыкли общаться с ИИ в чатах. Теперь он работает внутри среды разработки —
+          и помогает собирать настоящие сайты и приложения. Без необходимости быть программистом.
+        </p>
+
+        <figure class="shot-wide">
+          <img src="assets/mockups/shift-compare.png" alt="От чата с ИИ к полноценной IDE и превью сайта" width="1480" height="270" loading="lazy" />
+        </figure>
+
+        <div class="steps-3">
+          <div class="step">
+            <span class="step-icon" aria-hidden="true">💡</span>
+            <h3>1. Объясняешь идею</h3>
+            <p>Расскажи простыми словами, что хочешь создать.</p>
+          </div>
+          <div class="step">
+            <span class="step-icon" aria-hidden="true">✨</span>
+            <h3>2. ИИ создаёт</h3>
+            <p>Пишет код, собирает интерфейс и помогает собрать продукт.</p>
+          </div>
+          <div class="step">
+            <span class="step-icon" aria-hidden="true">🚀</span>
+            <h3>3. Ты управляешь</h3>
+            <p>Проверяешь результат, вносишь правки и развиваешь идею.</p>
+          </div>
+        </div>
+
+        <p class="section-footer-line">Не нужно знать программирование, чтобы начать создавать.</p>
+      </div>
+    </section>
+
+    <!-- 5. Idea → Launch -->
+    <section class="section" id="launch" aria-labelledby="launch-title">
+      <div class="container reveal">
+        <p class="pill">От идеи до запуска</p>
+        <h2 id="launch-title" class="section-title">С тебя — идея. Остальное поможем создать.</h2>
+        <p class="section-lead">
+          Цифровой продукт — это не только красивая картинка. Нужны кнопки, данные, логика и запуск.
+          С ИИ ты создаёшь рабочий продукт, а не просто макет страницы.
+        </p>
+
+        <figure class="shot-wide shot-wide-pad">
+          <img src="assets/mockups/launch-flow.png" alt="От идеи до готового сайта на ноутбуке и телефоне" width="1550" height="290" loading="lazy" />
+        </figure>
+
+        <div class="cards-3">
+          <article class="info-card">
+            <span class="info-icon" aria-hidden="true">💡</span>
+            <h3>Поможем создать</h3>
+            <p>От внешнего вида до внутренней логики продукта.</p>
+          </article>
+          <article class="info-card">
+            <span class="info-icon" aria-hidden="true">▦</span>
+            <h3>Всё необходимое под рукой</h3>
+            <p>Базы данных, серверы и инструменты для запуска.</p>
+          </article>
+          <article class="info-card">
+            <span class="info-icon" aria-hidden="true">♥</span>
+            <h3>Не останешься один</h3>
+            <p>Мы сопровождаем на каждом этапе пути.</p>
+          </article>
+        </div>
+
+        <p class="section-footer-line">
+          Тебе не нужно знать, как устроено всё изнутри. Достаточно знать, что ты хочешь создать.
+          Мы поможем воплотить это в жизнь.
+        </p>
+      </div>
+    </section>
+
+    <!-- Program -->
+    <section class="section section-muted" id="program" aria-labelledby="program-title">
+      <div class="container reveal">
+        <p class="pill">Программа</p>
+        <h2 id="program-title" class="section-title">Пять занятий — от нуля до своего сайта онлайн</h2>
+        <p class="section-lead">
+          Мини-курс по вайбкодингу для новичков: вместе пройдём путь от первой строчки кода
+          до готового продукта, которым можно гордиться.
+        </p>
+
+        <ol class="program-list">
+          <li class="program-item">
+            <span class="program-num">01</span>
+            <div>
+              <h3>Твоя цифровая мастерская</h3>
+              <ul>
+                <li>Настроим удобное рабочее пространство</li>
+                <li>Познакомимся с редактором кода — «волшебным карандашом»</li>
+                <li>Разберёмся, что такое GitHub и базовые команды</li>
+              </ul>
+            </div>
+          </li>
+          <li class="program-item">
+            <span class="program-num">02</span>
+            <div>
+              <h3>Оживляем идеи: первый сайт</h3>
+              <ul>
+                <li>HTML и CSS — скелет и одежда страницы</li>
+                <li>Текст, изображения, ссылки и структура</li>
+                <li>Стилизуем сайт под свой уникальный вайб</li>
+              </ul>
+            </div>
+          </li>
+          <li class="program-item">
+            <span class="program-num">03</span>
+            <div>
+              <h3>Твой сайт онлайн: деплой</h3>
+              <ul>
+                <li>Хостинг и домен — как выбрать</li>
+                <li>Публикация сайта в интернет</li>
+                <li>Как сайт остаётся «на связи»</li>
+              </ul>
+            </div>
+          </li>
+          <li class="program-item">
+            <span class="program-num">04</span>
+            <div>
+              <h3>За кулисами: основы бэкенда</h3>
+              <ul>
+                <li>Серверная логика и интерактивность</li>
+                <li>Базовые принципы работы с данными</li>
+                <li>Как сайт общается с пользователями и БД</li>
+              </ul>
+            </div>
+          </li>
+          <li class="program-item">
+            <span class="program-num">05</span>
+            <div>
+              <h3>Чат-боты и SMM</h3>
+              <ul>
+                <li>Простой чат-бот, который отвечает на вопросы</li>
+                <li>Автоматизация общения</li>
+                <li>SMM-инструменты, чтобы проект заметили</li>
+              </ul>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Teacher -->
+    <section class="section" id="teacher" aria-labelledby="teacher-title">
+      <div class="container reveal teacher-grid">
+        <div class="teacher-photo" aria-hidden="true">
+          <img src="assets/brand/athena-owl.svg" alt="" width="120" height="120" />
+        </div>
+        <div>
+          <p class="pill">Преподаватель</p>
+          <h2 id="teacher-title" class="section-title left">Наставник, который ведёт за руку</h2>
+          <p class="section-lead left">
+            Практик вайбкодинга и AI-разработки. Поможет настроить инструменты,
+            разобрать ошибки и довести первый проект до публикации.
+            Подставьте сюда фото и биографию преподавателя — блок уже готов к контенту.
+          </p>
+          <ul class="teacher-points">
+            <li>Обратная связь по домашним заданиям</li>
+            <li>Разбор реальных кейсов на занятиях</li>
+            <li>Помощь с портфолио первого проекта</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="section section-muted" id="reviews" aria-labelledby="reviews-title">
+      <div class="container reveal">
+        <p class="pill">Отзывы</p>
+        <h2 id="reviews-title" class="section-title">Истории тех, кто уже начал создавать</h2>
+        <div class="cards-3">
+          <blockquote class="review-card">
+            <p>«Думала, что код — не моё. За два занятия собрала лендинг для своей студии и выложила онлайн.»</p>
+            <footer>
+              <strong>Мария</strong>
+              <span>Дизайнер интерьеров</span>
+            </footer>
+          </blockquote>
+          <blockquote class="review-card">
+            <p>«Раньше только писал промпты в чат. Теперь понимаю, как из идеи получается рабочий продукт.»</p>
+            <footer>
+              <strong>Артём</strong>
+              <span>Маркетолог</span>
+            </footer>
+          </blockquote>
+          <blockquote class="review-card">
+            <p>«Больше всего зашло про деплой и чат-бота — сразу пригодилось для маленького pet-проекта.»</p>
+            <footer>
+              <strong>Елена</strong>
+              <span>Предприниматель</span>
+            </footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bonuses -->
+    <section class="section" id="bonuses" aria-labelledby="bonuses-title">
+      <div class="container reveal">
+        <p class="pill">Бонусы</p>
+        <h2 id="bonuses-title" class="section-title">Что ещё получишь на курсе</h2>
+        <div class="cards-3 bonuses-grid">
+          <article class="info-card">
+            <h3>Практические задания</h3>
+            <p>После каждого занятия — практика, чтобы сразу закрепить материал.</p>
+          </article>
+          <article class="info-card">
+            <h3>Материалы и ресурсы</h3>
+            <p>Ссылки на статьи, видео, инструменты и сообщества для развития.</p>
+          </article>
+          <article class="info-card">
+            <h3>Обратная связь</h3>
+            <p>Можно задать вопросы наставнику и не остаться один на один со сложностями.</p>
+          </article>
+          <article class="info-card">
+            <h3>Портфолио</h3>
+            <p>Помощь в оформлении первого проекта для демонстрации навыков.</p>
+          </article>
+          <article class="info-card">
+            <h3>Вдохновляющие примеры</h3>
+            <p>Истории успеха и крутые проекты, созданные с помощью вайбкодинга.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section-muted" id="faq" aria-labelledby="faq-title">
+      <div class="container reveal">
+        <p class="pill">FAQ</p>
+        <h2 id="faq-title" class="section-title">Частые вопросы</h2>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>Нужен ли опыт программирования?</summary>
+            <p>Нет. Интенсив рассчитан на новичков: идём от настройки среды до публикации сайта.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Чем вайбкодинг отличается от «просто чата с ИИ»?</summary>
+            <p>Мы учим создавать продукты внутри IDE: настоящий код, структура проекта, деплой и логика — не только текст в диалоге.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Сколько занятий и что на выходе?</summary>
+            <p>Пять занятий. На выходе — свой сайт онлайн, понимание бэкенда и навыки для чат-бота и SMM.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Какие инструменты будем использовать?</summary>
+            <p>Редактор кода, GitHub, современные AI-среды вроде Cursor, а также базовые подходы к хостингу и данным.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Будет ли поддержка после занятий?</summary>
+            <p>Да: можно задавать вопросы, получать обратную связь и дополнительные материалы для развития.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Как записаться?</summary>
+            <p>Оставьте заявку в форме ниже — мы свяжемся и расскажем детали старта.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Signup -->
+    <section class="section signup" id="signup" aria-labelledby="signup-title">
+      <div class="container reveal signup-inner">
+        <div>
+          <p class="pill pill-spark">Старт рядом</p>
+          <h2 id="signup-title" class="section-title left">Создай свой мир в сети</h2>
+          <p class="section-lead left">
+            Мечтаешь воплотить идеи и показать их миру? Этот мини-курс — первый шаг
+            в вайбкодинг. Оставь заявку — и мы поможем начать.
+          </p>
+        </div>
+
+        <form class="signup-form" data-signup-form novalidate>
+          <label>
+            <span>Имя</span>
+            <input type="text" name="name" autocomplete="name" required placeholder="Как к вам обращаться" />
+          </label>
+          <label>
+            <span>Telegram или телефон</span>
+            <input type="text" name="contact" autocomplete="tel" required placeholder="@username или +7…" />
+          </label>
+          <label>
+            <span>О проекте <em>(необязательно)</em></span>
+            <textarea name="about" rows="3" placeholder="Какую идею хотите воплотить?"></textarea>
+          </label>
+          <button class="btn btn-dark btn-lg" type="submit">Записаться на интенсив →</button>
+          <p class="form-note">Нажимая кнопку, вы соглашаетесь на связь по указанному контакту.</p>
+          <p class="form-success" data-form-success hidden>Заявка принята! Мы скоро свяжемся с вами.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="brand" href="#top">
+        <img src="assets/brand/athena-owl.svg" alt="" width="28" height="28" />
+        <span class="brand-name">Athena</span>
+      </a>
+      <nav aria-label="Навигация в подвале">
+        <a href="#about">О курсе</a>
+        <a href="#program">Программа</a>
+        <a href="#faq">FAQ</a>
+        <a href="#signup">Записаться</a>
+      </nav>
+      <p class="footer-copy">© <span data-year></span> Athena. Практический интенсив по вайбкодингу.</p>
+    </div>
+  </footer>
+
+  <a class="sticky-cta" href="#signup" data-sticky-cta hidden>Записаться →</a>
+
+  <div class="ai-chat" data-ai-chat>
+    <button class="ai-chat-launch" type="button" data-ai-open aria-expanded="false" aria-controls="ai-chat-panel">
+      <span class="ai-chat-launch-icon" aria-hidden="true">✦</span>
+      <span>Спросить Athena</span>
+    </button>
+
+    <section class="ai-chat-panel" id="ai-chat-panel" data-ai-panel hidden aria-label="Чат с Athena">
+      <header class="ai-chat-head">
+        <div class="ai-chat-brand">
+          <img src="assets/brand/athena-owl.svg" alt="" width="28" height="28" />
+          <div>
+            <strong>Athena</strong>
+            <span>Помощник по курсу</span>
+          </div>
+        </div>
+        <button class="ai-chat-close" type="button" data-ai-close aria-label="Закрыть чат">×</button>
+      </header>
+
+      <div class="ai-chat-thread" data-ai-thread aria-live="polite"></div>
+
+      <div class="ai-chat-chips" data-ai-chips>
+        <button type="button" data-chip>Что будет на курсе?</button>
+        <button type="button" data-chip>Нужен ли опыт?</button>
+        <button type="button" data-chip>С чего начать?</button>
+        <button type="button" data-chip>Как записаться?</button>
+      </div>
+
+      <form class="ai-chat-form" data-ai-form>
+        <label class="visually-hidden" for="ai-chat-input">Сообщение</label>
+        <textarea id="ai-chat-input" data-ai-input rows="1" maxlength="2000" placeholder="Спросите про курс…" required></textarea>
+        <button class="ai-chat-send" type="submit" data-ai-send aria-label="Отправить">→</button>
+      </form>
+      <p class="ai-chat-note">Ответы ИИ · не замена консультации наставника</p>
+    </section>
+  </div>
+
+  <script src="app.js" defer></script>
+  <script src="chat.js" defer></script>
+</body>
+</html>
