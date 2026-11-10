@@ -26,7 +26,23 @@ node server.mjs
 | `server.mjs` | Статика + `POST /api/chat` |
 | `assets/mockups/` | Картинки секций |
 | `assets/refs/` | Исходные макеты дизайна |
-| `assets/_gen_images.mjs` | Перегенерация картинок через gpt-image-2 |
+| `assets/IMAGE_PROMPTS.md` | **Промпты для генерации картинок (RU UI)** |
+| `assets/_gen_images.mjs` | Скрипт генерации через gpt-image-2 |
+
+## Картинки (перегенерация)
+
+Сейчас в мокапах местами английский текст — это нужно перегенерировать.
+
+```bash
+# все картинки
+node assets/_gen_images.mjs
+
+# одна штука
+node assets/_gen_images.mjs card-sites.png
+```
+
+Нужен `OPENROUTER_API_KEY` в `.env`. Модель: `openai/gpt-image-2`.  
+Полные промпты и требования к русскому UI — в [`assets/IMAGE_PROMPTS.md`](assets/IMAGE_PROMPTS.md).
 
 ## ИИ-чат
 

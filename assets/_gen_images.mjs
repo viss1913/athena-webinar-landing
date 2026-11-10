@@ -1,6 +1,12 @@
 /**
  * Regenerate landing visuals via OpenRouter ChatGPT Image 2
  * (same path as IDE: POST /images, model openai/gpt-image-2).
+ *
+ * Usage:
+ *   node assets/_gen_images.mjs
+ *   node assets/_gen_images.mjs card-sites.png
+ *
+ * Prompts (human-readable): assets/IMAGE_PROMPTS.md
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -45,7 +51,7 @@ const BASE = (
 const MODEL = process.env.OPENROUTER_IMAGE_MODEL || "openai/gpt-image-2";
 
 if (!API_KEY) {
-  console.error("No OPENROUTER_API_KEY");
+  console.error("No OPENROUTER_API_KEY in .env");
   process.exit(1);
 }
 
@@ -142,75 +148,91 @@ async function generate({
   throw lastErr || new Error("generate_failed");
 }
 
-const STYLE =
-  "Apple marketing aesthetic, ultra clean, soft daylight, premium SaaS landing, crisp UI, high detail, no watermarks, no Cyrillic text artifacts, no blurry compression";
+const STYLE = [
+  "Apple marketing aesthetic, ultra clean soft daylight, premium SaaS landing page,",
+  "crisp high-detail UI mockups, soft shadows, light gray #F5F5F7 background,",
+  "no watermarks, no compression artifacts.",
+  "CRITICAL: all visible interface labels, headlines, buttons and chat messages",
+  "must be in correct natural Russian language (Cyrillic). No English UI copy",
+  "except code identifiers / file names inside an IDE when needed.",
+].join(" ");
 
 const jobs = [
   {
     file: "hero-glass-clean.png",
     aspect: "16:9",
     refs: [path.join(REFS, "1.jpg")],
-    prompt: `${STYLE}. Hero background only: large liquid glass / crystal ribbon sculptures framing left and right edges of a light gray #F5F5F7 canvas, soft prismatic edge highlights, frosted transparency, empty center for typography, no text, no logos, no UI, photoreal 3D render matching Apple keynote glass.`,
+    prompt: `${STYLE} Hero background only: large liquid glass / crystal ribbon sculptures framing left and right edges of a light gray #F5F5F7 canvas, soft prismatic edge highlights, frosted transparency, empty center for typography. No text, no logos, no UI. Photoreal 3D render matching Apple keynote glass.`,
   },
   {
-    file: "card-sites.jpg",
+    file: "card-sites.png",
     aspect: "4:3",
     refs: [path.join(REFS, "2.jpg")],
-    prompt: `${STYLE}. Close-up of a floating Mac browser window mockup for a portfolio site myportfolio.ru: white UI, traffic lights, modern architecture house photo hero, headline area, black pill CTA. Soft shadow on light gray. No surrounding page chrome, just the polished product card visual.`,
+    prompt: `${STYLE} Close-up floating Mac browser window mockup of a Russian portfolio website. URL bar: myportfolio.ru. Navigation in Russian: О нас · Проекты · Контакты. Big Russian headline: «Создавай больше». Subline: «Идеи. Проекты. Возможности.» Black pill CTA in Russian: «Узнать больше →». Right side: modern architecture house photo. Soft shadow on light gray. Product card crop only.`,
   },
   {
-    file: "card-chatbots.jpg",
+    file: "card-chatbots.png",
     aspect: "4:3",
     refs: [path.join(REFS, "2.jpg")],
-    prompt: `${STYLE}. Close-up messenger / AI chat UI mockup card: left icon sidebar, blue user bubble and white AI reply bubble with spark icon, clean white rounded window, soft shadow. Product screenshot look for a landing feature card.`,
+    prompt: `${STYLE} Close-up messenger / AI chat UI mockup for a landing feature card. Left icon sidebar. Clean white rounded window with soft shadow. User bubble (Russian): «Как сделать лендинг за вечер?» AI reply bubble (Russian): «Отличный вопрос! Опишите, какой сайт вам нужен — и я помогу его создать.» Small spark/AI icon. No English chat text.`,
   },
   {
-    file: "card-smm.jpg",
+    file: "card-smm.png",
     aspect: "4:3",
     refs: [path.join(REFS, "2.jpg")],
-    prompt: `${STYLE}. Close-up content calendar dashboard mockup: header content plan, calendar grid with highlighted day, three social preview cards with Telegram YouTube Instagram style icons and green checkmarks. Soft white card, soft shadow.`,
+    prompt: `${STYLE} Close-up content calendar dashboard mockup. Header in Russian: «Контент-план · Июль 2026». Calendar grid with one highlighted day. Three post preview cards with Telegram / YouTube / Instagram style icons and green checkmarks. Soft white card, soft shadow. UI labels in Russian (Статус, Готово, Публикация).`,
   },
   {
-    file: "card-backend.jpg",
+    file: "card-backend.png",
     aspect: "4:3",
     refs: [path.join(REFS, "2.jpg")],
-    prompt: `${STYLE}. Close-up dark admin database dashboard mockup: dark sidebar, table of users with green active status dots, tiny sparkline chart, modern developer console aesthetic, soft shadow.`,
+    prompt: `${STYLE} Close-up dark admin database dashboard mockup. Title in Russian: «База данных». Sidebar labels in Russian: Данные · Аналитика · Настройки · Логи. Table columns in Russian: ID · Имя · Статус. Rows with Russian names, green active status dots, tiny sparkline. Modern developer console look, soft shadow.`,
   },
   {
-    file: "tool-cursor.jpg",
+    file: "tool-cursor.png",
     aspect: "4:3",
     refs: [path.join(REFS, "3.jpg")],
-    prompt: `${STYLE}. High fidelity Cursor IDE window mockup: light theme, file tree, React TypeScript code, AI chat sidebar suggesting a counter, mini UI preview with +1 button. Soft drop shadow, slightly floating. Label-ready product screenshot.`,
+    prompt: `${STYLE} High-fidelity Cursor IDE window mockup, light theme, soft drop shadow. File tree with App.tsx. React/TypeScript code in editor may be English. AI chat sidebar text in Russian: «Давай добавим красивый счётчик?» and reply «Готово! Добавлен компонент с интерактивным счётчиком.» Mini preview with 0 and blue button «+1».`,
   },
   {
-    file: "tool-codex.jpg",
+    file: "tool-codex.png",
     aspect: "4:3",
     refs: [path.join(REFS, "3.jpg")],
-    prompt: `${STYLE}. High fidelity OpenAI Codex / agent task UI mockup: checklist with completed steps and one in-progress spinner, green code diff snippet below. Clean light window, soft shadow.`,
+    prompt: `${STYLE} High-fidelity OpenAI Codex / agent task UI mockup, light clean window. Checklist in Russian: ✓ Добавить аналитику для пользовательских планов; ✓ Анализирую кодовую базу; ✓ Планирую изменения; ● Вношу изменения…; ○ Проверяю результаты. Below: small green code diff (code may be English). Soft shadow.`,
   },
   {
-    file: "tool-vscode.jpg",
+    file: "tool-vscode.png",
     aspect: "4:3",
     refs: [path.join(REFS, "3.jpg")],
-    prompt: `${STYLE}. High fidelity Visual Studio Code dark theme window: file tree, TypeScript code, bottom terminal showing Vite ready localhost. Soft shadow product screenshot.`,
+    prompt: `${STYLE} High-fidelity Visual Studio Code dark theme window. File tree + TypeScript code (English identifiers OK). Bottom terminal: «Vite ready in 300ms → localhost:5173». Soft shadow product screenshot.`,
   },
   {
-    file: "shift-compare.jpg",
+    file: "shift-compare.png",
     aspect: "16:9",
     refs: [path.join(REFS, "4.jpg")],
-    prompt: `${STYLE}. Wide composition: left light ChatGPT-style chat window (user asks to create a studio website), arrow in the middle, right dark IDE with file tree, React code, live website preview. Soft shadows, premium product marketing visual.`,
+    prompt: `${STYLE} Wide composition, premium marketing visual. LEFT: light ChatGPT-style chat. User (Russian): «Создай сайт для моей студии». AI (Russian): «Конечно! Я создам современный сайт для вашей студии.» CENTER arrow → RIGHT: dark IDE with file tree, React code, live preview. Preview headline in Russian: «Твоя студия для больших идей». Button: «Начать работу». Soft shadows.`,
   },
   {
-    file: "launch-flow.jpg",
+    file: "launch-flow.png",
     aspect: "16:9",
     refs: [path.join(REFS, "5.jpg")],
-    prompt: `${STYLE}. Wide process illustration: sticky note idea on left, floating AI chat + database + cloud icons in middle, arrow to laptop and phone mockups showing a finished mountain landscape website with yellow Start button. Soft shadows, lots of white space, premium SaaS marketing.`,
+    prompt: `${STYLE} Wide process illustration on white / light gray. LEFT: sticky note with handwritten Russian «Моя идея». MIDDLE: floating AI chat + database + cloud icons. ARROW → RIGHT: laptop + phone mockups of finished mountain website. Screen headline in Russian: «Создавай больше». Subline: «Твой цифровой продукт сегодня». Yellow CTA: «Начать». Soft shadows, lots of white space.`,
   },
 ];
 
+const only = process.argv[2]?.trim();
+const queue = only
+  ? jobs.filter((j) => j.file === only || j.file.replace(/\.[^.]+$/, "") === only)
+  : jobs;
+
+if (!queue.length) {
+  console.error(`Unknown image "${only}". See assets/IMAGE_PROMPTS.md`);
+  process.exit(1);
+}
+
 fs.mkdirSync(OUT, { recursive: true });
 
-for (const job of jobs) {
+for (const job of queue) {
   try {
     await generate(job);
   } catch (e) {
